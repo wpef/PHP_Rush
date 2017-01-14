@@ -25,7 +25,7 @@ h1#logo {
 
 ul#id {
 	list-style: none;
-	position:fixed;
+	position: absolute;
 	top: 6em;
 	right: 7em;
 	font-size:13px;
