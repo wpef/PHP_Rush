@@ -1,6 +1,6 @@
 <div class="header">
 	<h1 id="logo">
-		<a href="../index.php">
+		<a href="##">
 			Webshop
 		</a>
 	</h1>

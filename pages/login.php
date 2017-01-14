@@ -1,6 +1,6 @@
 <HTML>
 <?php
-include ("../template_parts/head_page.html");
+include ("../template_parts/head.html");
 ?>
 	<BODY>
 		<?php
