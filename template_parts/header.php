@@ -5,7 +5,7 @@
 		</a>
 	</h1>
 	<ul id="id">
-		<li><a href='./pages/login.php'>Connexion</a></li>
-		<li><a href='./pages/signup.php'>Inscription</a></li>
+		<li><a href='./login.php'>Connexion</a></li>
+		<li><a href='./signup.php'>Inscription</a></li>
 	</ul>
 </div>
