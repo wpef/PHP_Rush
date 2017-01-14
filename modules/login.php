@@ -3,14 +3,13 @@ session_start();
 
 include ('auth.php');
 
-if (!$_GET['login'] || !$_GET['passwd'] || !$_GET['submit'] || $_GET['submit'] != 'OK') {
-	echo "ERRORf\n";
+if (!$_POST['login'] || !$_POST['passwd'] || !$_POST['submit'] || $_POST['submit'] != 'OK') {
+	echo "ERROR\n";
 	return;
 }
 
-
-$login = $_GET['login'];
-$passwd = $_GET['passwd'];
+$login = $_POST['login'];
+$passwd = $_POST['passwd'];
 
 if (auth($login, $passwd))
 {
