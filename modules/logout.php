@@ -1,7 +1,8 @@
 <?php
-
 session_start();
-
-if ($_SESSION['loggued_on_user'] != "")
-	$_SESSION['loggued_on_user'] = "";
+if (isset($_SESSION))
+{
+	session_destroy();
+}
+header('Location: /rush00/index.php');
 ?>

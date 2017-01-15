@@ -43,6 +43,7 @@ ul#id > li:hover {
 ul#id > li {
 	display: block;
 	padding: 6px 14px;
+	width:8em;
 	background-color: #87CEFA;
 	border: solid 2px white;
 	text-align:center;
@@ -76,6 +77,33 @@ ul#menu > li{
 ul#menu > li > a {
 	text-decoration:none;
 	color:black;
+}
+
+	/* account manager */
+
+li:hover > ul#account {
+	display:block;
+}
+
+ul#account {
+	padding-left: 0px;
+	list-style:none;
+	display:none;
+}
+
+ul#account > li {
+	width: 8em;
+	color: white;
+	margin-top:5px;
+}
+
+ul#account > li > a {
+	text-decoration : none;
+	color:white;
+}
+
+#account {
+	color :white;
 }
 
 /* MAIN */

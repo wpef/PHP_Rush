@@ -4,21 +4,22 @@ session_start();
 include ('auth.php');
 
 if (!$_POST['login'] || !$_POST['passwd'] || !$_POST['submit'] || $_POST['submit'] != 'OK') {
-	echo "ERROR\n";
+	$_SESSION['login_error'] = 1;
+	header('Location: ../pages/login.php');
 	return;
 }
 
 $login = $_POST['login'];
-$passwd = $_POST['passwd'];
+$passwd = $_POST['passwd']; //hash before sending
 
 if (auth($login, $passwd))
 {
-	$_SESSION['loggued_on_user'] = $login;
-	echo "OK\n";
+	set_session($login);
+	header('Location: ../index.php');
 }
 else
 {
-	$_SESSION['loggued_on_user'] = "";
-	echo "ERROR\n";
+	$_SESSION['login_error'] = 2;
+	header('Location: ../pages/login.php');
 }
 ?>

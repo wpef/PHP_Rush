@@ -1,7 +1,10 @@
 <?PHP
+session_start();
+include('../modules/auth.php');
 
 if (!$_POST['login'] || !$_POST['passwd'] || !$_POST['submit'] || $_POST['submit'] != 'OK') {
-	echo "ERROR\n";
+	$_SESSION['signup_error'] = 1;
+	header('Location: ../pages/signup.php');
 	return;
 }
 
@@ -10,9 +13,9 @@ if (file_exists('../private/passwd'))
 	$file = file_get_contents('../private/passwd');
 	$file_content = unserialize($file);
 }
-else if (!file_exists('../private'))
+else if (!is_dir('../private/'))
 {
-	mkdir("../private");
+	mkdir('../private/');
 	$file_content = NULL;
 }
 
@@ -23,27 +26,21 @@ $account = array(
 	'passwd' => $passwd,
 );
 
-function log_exists($login, $file_content)
-{
-	if ($file_content === NULL)
-		return (FALSE);
-	foreach ($file_content as $account)
-	{
-		foreach ($account as $login)
-		{
-			if ($login == $_POST['login'])
-				return (TRUE);
-		}
-	}
-	return (FALSE);
-}
-
-if (!log_exists($login, $file_content))
+function add_account($account, $file_content)
 {
 	$file_content[] = $account;
 	$file = serialize($file_content);
 	file_put_contents('../private/passwd', $file);
 }
-else
-	echo "ERROR\n";
+
+if (!log_exists($login, $file_content))
+{
+	add_account($account, $file_content);
+	set_session($login);
+	header('Location: ../index.php');
+}
+else {
+	$_SESSION['signup_error'] = 2;
+	header('Location: ../pages/signup.php');
+}
 ?>

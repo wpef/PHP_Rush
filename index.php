@@ -1,4 +1,5 @@
 <?php
+session_start();
 $link = dirname(__DIR__)."/rush00";
 $inc = $link.'/template_parts/'; 
 ?>
