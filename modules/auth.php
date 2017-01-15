@@ -5,7 +5,6 @@ function auth($login, $passwd)
 		return (FALSE);
 	$file = file_get_contents('../private/passwd');
 	$db = unserialize($file);
-	$passwd = hash('whirlpool', $passwd);
 
 	if (!$file || !$db)
 		return;

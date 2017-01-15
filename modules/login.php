@@ -10,7 +10,7 @@ if (!$_POST['login'] || !$_POST['passwd'] || !$_POST['submit'] || $_POST['submit
 }
 
 $login = $_POST['login'];
-$passwd = $_POST['passwd'];
+$passwd = hash('whirlpool', $_POST['passwd']);
 
 if (auth($login, $passwd))
 {
