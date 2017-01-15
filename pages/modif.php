@@ -5,6 +5,7 @@
 		<?php
 		include("../template_parts/header.php");
 		include("../template_parts/nav.html");
+		var_dump($_SESSION);
 		?>
 		<div class="main">
 		<?php if ($_SESSION['modif_error'] == 1) : ?>

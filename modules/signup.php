@@ -8,16 +8,8 @@ if (!$_POST['login'] || !$_POST['passwd'] || !$_POST['submit'] || $_POST['submit
 	return;
 }
 
-if (file_exists('../private/passwd'))
-{
 	$file = file_get_contents('../private/passwd');
 	$file_content = unserialize($file);
-}
-else if (!is_dir('../private/'))
-{
-	mkdir('../private/');
-	$file_content = NULL;
-}
 
 $login = $_POST['login'];
 $passwd = hash('whirlpool', $_POST['passwd']);

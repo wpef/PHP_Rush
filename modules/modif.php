@@ -1,10 +1,5 @@
 <?PHP
 session_start();
-if (!$_POST['login'] || !$_POST['oldpw'] || !$_POST['newpw'] || !$_POST['submit'] || $_POST['submit'] != 'OK') {
-	$_SESSION["modif_error"] == 1;
-	header('Location: ../pages/modif.php');
-	return;
-}
 
 $file = file_get_contents('../private/passwd');
 $file_content = unserialize($file);
