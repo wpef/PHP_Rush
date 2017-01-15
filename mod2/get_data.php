@@ -1,4 +1,3 @@
-#!/usr/bin/php
 <?PHP
 function  get_articles()
 {

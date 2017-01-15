@@ -112,5 +112,50 @@ ul#account > li > a {
 	display: block;
 	width: 100%;
 	height: 100%;
-	border : 1px solid black;
+}
+
+/* articles */
+
+article.article {
+	display : table-cell;
+	vertical-align: middle;
+	padding : 10px 1em;
+	width : 30%;
+	margin : 0 1em;
+	text-align:center;
+	position:relative;
+	border: 5px outset;
+}
+
+.article > img {
+	max-width:300px;
+	min-height:200px;
+}
+
+p.genre, p.cat {
+	text-align: left;
+	display:table-cell;
+	width : 50%;
+	padding:2em;
+	font-size: smaller;
+	color: darkgray;
+}
+
+p.desc {
+	min-width:33%;
+}
+
+.article > p.price {
+	position:absolute;
+	font-size: 3em;
+	bottom: 0;
+	right : 1em;
+}
+
+.catalogue > div#art_row {
+	display: table-row;
+}
+
+div.catalogue {
+	display: table;
 }

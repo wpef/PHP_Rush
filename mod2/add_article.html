@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title></title>
+  </head>
+  <body>
+    <form method="POST" action="add_article.php" >
+      <p>
+      Nom du produit: <input type="text" name="name" required />
+      <br />
+      Quantite: <input type="text" name="quantite" required />
+      <br />
+      Description: <input type="text" name="description" required />
+      <br />
+      Prix: <input type="text" name="price" required />
+      <br />
+      Categorie:<br />
+      <input type="checkbox" name="categories[1]" value="Albulm"  /> Albulm
+      <br />
+      <input type="checkbox" name="categories[2]" value="Francais"  /> Francais
+      <br />
+      <input type="checkbox" name="categories[3]" value="US"  /> US
+      <br />
+      <input type="checkbox" name="categories[4]" value="Meilleurs ventes"  /> Meilleurs ventes
+      <br />
+      <input type="checkbox" name="categories[5]" value="Promotions"  /> Promotions
+      <br />
+      Genres: <br />
+      <input type="checkbox" name="genres[1]" value="Rap" /> Rap <br />
+      <input type="checkbox" name="genres[2]" value="R'n'B" /> R'n'B <br />
+      <input type="checkbox" name="genres[3]" value="Variete" /> Variete <br />
+      <input type="checkbox" name="genres[4]" value="Classique" /> Classique <br />
+      <input type="checkbox" name="genres[5]" value="Pop" /> Pop <br />
+      <br />
+      <input type="submit" name="submit" value="OK" />
+      </p>
+    </form>
+  </body>
+</html>

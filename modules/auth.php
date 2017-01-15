@@ -1,4 +1,6 @@
 <?PHP
+include("get_user.php");
+
 function auth($login, $passwd)
 {
 	if (!file_exists('../private/passwd'))
@@ -36,8 +38,12 @@ function log_exists($login, $file_content)
 
 function set_session($login)
 {
+	$user = (get_user($login));
 	$_SESSION['login'] = $login;
-	$_SESSION['role'] = "client";
+	if (!$user)
+		$_SESSION['role'] = "client";
+	else
+		$_SESSION['role'] = $user['permssion'];
 	$_SESSION['log'] = TRUE;
 	if (isset($_SESSION['login_error']))
 		unset($_SESSION['login_error']);
