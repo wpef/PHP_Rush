@@ -1,7 +1,8 @@
 <?PHP
-
+session_start();
 if (!$_POST['login'] || !$_POST['oldpw'] || !$_POST['newpw'] || !$_POST['submit'] || $_POST['submit'] != 'OK') {
-	echo "ERROR\n";
+	$_SESSION["modif_error"] == 1;
+	header('Location: ../pages/modif.php');
 	return;
 }
 
@@ -50,11 +51,13 @@ if ($old_acc !== NULL)
 	if ($old_passwd == $old_acc['passwd'])
 	{
 		change_pass($new_passwd, $file_content);
+		header('Location: ../index.php');
 	}
 	else
-		echo "ERROR\n";
+		$_SESSION['modif_error'] == 2;
 }
 else
-	echo "ERROR\n";
+	$_SESSION['modif_error'] == 3;
+header('Location: ../pages/modif.php');
 
 ?>

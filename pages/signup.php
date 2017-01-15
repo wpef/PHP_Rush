@@ -1,7 +1,6 @@
 <?php
 session_start();
 include ("../template_parts/head.html");
-var_dump($_SESSION);
 ?>
 <HTML>
 	<BODY>

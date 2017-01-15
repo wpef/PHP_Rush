@@ -24,7 +24,6 @@ function log_exists($login, $file_content)
 {
 	if ($file_content === NULL || $file_content[0] === NULL)
 		return (FALSE);
-	var_dump($file_content);
 	foreach ($file_content as $account)
 	{
 		foreach ($account as $log)
